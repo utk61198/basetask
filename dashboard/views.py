@@ -63,7 +63,7 @@ password='tf32CvVTQBlA0ALInzu6JpyRW9ySbW4y')
             today=date.today()-timedelta(days=2)
             d1=today.strftime("%d%m%y")
 
-    if int(timenow) < 18:
+    if int(timenow) < 2:
             today=date.today()-timedelta(days=1)
             d1=today.strftime("%d%m%y")
     
