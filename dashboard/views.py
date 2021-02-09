@@ -17,9 +17,9 @@ import os
 # Create your views here.
 def index(request):
     redisClient =Redis(
-host='redis-19763.c1.ap-southeast-1-1.ec2.cloud.redislabs.com',
-port=19763,
-password='tf32CvVTQBlA0ALInzu6JpyRW9ySbW4y')
+host='ec2-54-90-33-141.compute-1.amazonaws.com',
+port=14819,
+password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
 
  
     
@@ -63,7 +63,7 @@ password='tf32CvVTQBlA0ALInzu6JpyRW9ySbW4y')
             today=date.today()-timedelta(days=2)
             d1=today.strftime("%d%m%y")
 
-    if int(timenow) < 18:
+    if int(timenow) < 2:
             today=date.today()-timedelta(days=1)
             d1=today.strftime("%d%m%y")
     
@@ -82,6 +82,7 @@ password='tf32CvVTQBlA0ALInzu6JpyRW9ySbW4y')
         for row in reader:
             
             dc.append({"Name":row[1],"Code":row[0],"OPEN":row[4],"HIGH":row[5],"LOW":row[6],"CLOSE":row[7]})
+            # redisClient.rpush(row[1],row[1],row[4])
             
             
         final={"dict":dc,"filename":d1}
