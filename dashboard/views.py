@@ -71,9 +71,6 @@ password='tf32CvVTQBlA0ALInzu6JpyRW9ySbW4y')
 
 
     
-    
-
-    d1="080221"
     download_file("https://www.bseindia.com/download/BhavCopy/Equity/EQ"+d1+"_CSV.ZIP", file_name, length)
     with zipfile.ZipFile("new_file.zip", 'r') as zip_ref:
         zip_ref.extractall()
