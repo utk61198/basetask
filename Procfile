@@ -1,1 +1,1 @@
-web: gunicorn bsedatatask.wsgi --log-file -
+web: gunicorn bsetask.wsgi --log-file -
