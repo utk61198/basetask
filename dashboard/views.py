@@ -63,19 +63,21 @@ password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
             today=date.today()-timedelta(days=2)
             d1=today.strftime("%d%m%y")
 
-    if int(timenow) < 18:
+    if int(timenow) < 17:
             today=date.today()-timedelta(days=1)
             d1=today.strftime("%d%m%y")
     
     print(d1)
 
-
     
-    download_file("https://www.bseindia.com/download/BhavCopy/Equity/EQ"+d1+"_CSV.ZIP", file_name, length)
-    with zipfile.ZipFile("new_file.zip", 'r') as zip_ref:
-        zip_ref.extractall()
+    if(os.path.isfile("EQ"+d1+".CSV")):
+        print("file exists")
+
+    else:
+        download_file("https://www.bseindia.com/download/BhavCopy/Equity/EQ"+d1+"_CSV.ZIP", file_name, length)
+        with zipfile.ZipFile("new_file.zip", 'r') as zip_ref:
+             zip_ref.extractall()
     dc=[]
-    redisClient.rpush("hello","world")
     print(redisClient.lpop("hello"))
     with open("EQ"+d1+".CSV", 'r') as file:
         
@@ -89,6 +91,6 @@ password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
         
 
     
-    os.remove("EQ"+d1+".CSV")
+    # os.remove("EQ"+d1+".CSV")
     os.remove("new_file.zip")
     return render(request, 'index.html',final)
