@@ -91,6 +91,6 @@ password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
         
 
     
-    # os.remove("EQ"+d1+".CSV")
+    os.remove("EQ"+d1+".CSV")
     os.remove("new_file.zip")
     return render(request, 'index.html',final)
