@@ -63,7 +63,7 @@ password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
             today=date.today()-timedelta(days=2)
             d1=today.strftime("%d%m%y")
 
-    if int(timenow) < 5:
+    if int(timenow) < 18:
             today=date.today()-timedelta(days=1)
             d1=today.strftime("%d%m%y")
     
@@ -75,17 +75,18 @@ password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
     with zipfile.ZipFile("new_file.zip", 'r') as zip_ref:
         zip_ref.extractall()
     dc=[]
-    
+    redisClient.rpush("hello","world")
+    print(redisClient.lpop("hello"))
     with open("EQ"+d1+".CSV", 'r') as file:
         
         reader = csv.reader(file)
         for row in reader:
-            
             dc.append({"Name":row[1],"Code":row[0],"OPEN":row[4],"HIGH":row[5],"LOW":row[6],"CLOSE":row[7]})
             # redisClient.rpush(row[1],row[1],row[4])
             
             
         final={"dict":dc,"filename":d1}
+        
 
     
     os.remove("EQ"+d1+".CSV")
