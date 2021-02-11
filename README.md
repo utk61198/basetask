@@ -25,7 +25,7 @@ In case of the weekends the bhavcopy file from friday is downloaded and the data
  ### Setup Instructions
  
  #### Step 1
- clone the github repository using git clone https://github.com/utk61198/bsetask.git
+ clone the github repository using git clone https://github.com/utk61198/basetask.git
  
  #### Step 2
  Go into the folder and install virtualenv using python -m venv venv and activate it using venv\Scripts\activate
