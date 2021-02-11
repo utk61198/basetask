@@ -9,6 +9,7 @@ from redis import Redis
 from datetime import date, timedelta
 import time
 import os
+import json
 
 
 
@@ -63,7 +64,7 @@ password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
             today=date.today()-timedelta(days=2)
             d1=today.strftime("%d%m%y")
 
-    if int(timenow) < 23:
+    if int(timenow) < 18:
             today=date.today()-timedelta(days=1)
             d1=today.strftime("%d%m%y")
     
@@ -89,7 +90,6 @@ password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
             
         final={"dict":dc,"filename":d1}
         
-
     
     os.remove("EQ"+d1+".CSV")
     os.remove("new_file.zip")
