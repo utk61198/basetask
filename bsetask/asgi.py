@@ -15,7 +15,5 @@ from channels.routing import ProtocolTypeRouter
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bsetask.settings')
 
-application = ProtocolTypeRouter({
-    "http": get_asgi_application(),
-    # Just HTTP for now. (We can add other protocols later.)
-})
+application =get_asgi_application()
+    
