@@ -64,7 +64,7 @@ password='p1937634a5571715925d58b71f8080ef1024f125eafa2edf0a9b5c270de498664')
             today=date.today()-timedelta(days=2)
             d1=today.strftime("%d%m%y")
 
-    if int(timenow) < 18:
+    if int(timenow) < 16:
             today=date.today()-timedelta(days=1)
             d1=today.strftime("%d%m%y")
     
