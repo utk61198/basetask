@@ -45,4 +45,4 @@ In case of the weekends the bhavcopy file from friday is downloaded and the data
  
  #### Video Demo
  
- [![YouTube link](https://youtu.be/qxFJKGqoCeI/0.jpg)](https://youtu.be/qxFJKGqoCeI)
+ [![YouTube link](https://youtu.be/qxFJKGqoCeI/0.jpg)](https://youtu.be/iAP55nR5jHc)
